@@ -5,7 +5,7 @@ package lab.zlren.sparkproject.util;
  *
  * @author Administrator
  */
-public class StringUtils {
+public class MyStringUtils {
 
     /**
      * 判断字符串是否为空
