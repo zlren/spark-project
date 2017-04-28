@@ -19,9 +19,9 @@ public class ValidUtils {
      */
     public static boolean between(String data, String dataField,
                                   String parameter, String startParamField, String endParamField) {
-        String startParamFieldStr = StringUtils.getFieldFromConcatString(
+        String startParamFieldStr = MyStringUtils.getFieldFromConcatString(
                 parameter, "\\|", startParamField);
-        String endParamFieldStr = StringUtils.getFieldFromConcatString(
+        String endParamFieldStr = MyStringUtils.getFieldFromConcatString(
                 parameter, "\\|", endParamField);
         if (startParamFieldStr == null || endParamFieldStr == null) {
             return true;
@@ -30,7 +30,7 @@ public class ValidUtils {
         int startParamFieldValue = Integer.valueOf(startParamFieldStr);
         int endParamFieldValue = Integer.valueOf(endParamFieldStr);
 
-        String dataFieldStr = StringUtils.getFieldFromConcatString(
+        String dataFieldStr = MyStringUtils.getFieldFromConcatString(
                 data, "\\|", dataField);
         if (dataFieldStr != null) {
             int dataFieldValue = Integer.valueOf(dataFieldStr);
@@ -56,14 +56,14 @@ public class ValidUtils {
      */
     public static boolean in(String data, String dataField,
                              String parameter, String paramField) {
-        String paramFieldValue = StringUtils.getFieldFromConcatString(
+        String paramFieldValue = MyStringUtils.getFieldFromConcatString(
                 parameter, "\\|", paramField);
         if (paramFieldValue == null) {
             return true;
         }
         String[] paramFieldValueSplited = paramFieldValue.split(",");
 
-        String dataFieldValue = StringUtils.getFieldFromConcatString(
+        String dataFieldValue = MyStringUtils.getFieldFromConcatString(
                 data, "\\|", dataField);
         if (dataFieldValue != null) {
             String[] dataFieldValueSplited = dataFieldValue.split(",");
@@ -91,13 +91,13 @@ public class ValidUtils {
      */
     public static boolean equal(String data, String dataField,
                                 String parameter, String paramField) {
-        String paramFieldValue = StringUtils.getFieldFromConcatString(
+        String paramFieldValue = MyStringUtils.getFieldFromConcatString(
                 parameter, "\\|", paramField);
         if (paramFieldValue == null) {
             return true;
         }
 
-        String dataFieldValue = StringUtils.getFieldFromConcatString(
+        String dataFieldValue = MyStringUtils.getFieldFromConcatString(
                 data, "\\|", dataField);
         if (dataFieldValue != null) {
             if (dataFieldValue.equals(paramFieldValue)) {

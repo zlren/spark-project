@@ -66,12 +66,16 @@ public class MyStringUtils {
      * @return 字段值
      */
     public static String getFieldFromConcatString(String str, String delimiter, String field) {
+        // System.out.println("呵呵:str " + str);
+        // System.out.println("呵呵:field " + field);
         String[] fields = str.split(delimiter);
         for (String concatField : fields) {
-            String fieldName = concatField.split("=")[0];
-            String fieldValue = concatField.split("=")[1];
-            if (fieldName.equals(field)) {
-                return fieldValue;
+            if (concatField.split("=").length == 2) {
+                String fieldName = concatField.split("=")[0];
+                String fieldValue = concatField.split("=")[1];
+                if (fieldName.equals(field)) {
+                    return fieldValue;
+                }
             }
         }
         return null;

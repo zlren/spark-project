@@ -1,7 +1,7 @@
 package lab.zlren.sparkproject.data;
 
 import lab.zlren.sparkproject.util.DateUtils;
-import lab.zlren.sparkproject.util.StringUtils;
+import lab.zlren.sparkproject.util.MyStringUtils;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.DataFrame;
@@ -15,10 +15,9 @@ import java.util.*;
 
 /**
  * 模拟数据程序
- * 生成了user_visit_action表的很多数据
- * 还有user_info表的很多数据
- *
- * @author Administrator
+ * 生成了user_visit_action表、user_info表的很多数据
+ * <p>
+ * Created by zlren on 2017/4/26.
  */
 public class MockData {
 
@@ -47,8 +46,8 @@ public class MockData {
 
                 for (int k = 0; k < random.nextInt(100); k++) {
                     long pageid = random.nextInt(10);
-                    String actionTime = baseActionTime + ":" + StringUtils.fulfuill(String.valueOf(random.nextInt(59)
-                    )) + ":" + StringUtils.fulfuill(String.valueOf(random.nextInt(59)));
+                    String actionTime = baseActionTime + ":" + MyStringUtils.fulfuill(String.valueOf(random.nextInt(59)
+                    )) + ":" + MyStringUtils.fulfuill(String.valueOf(random.nextInt(59)));
                     String searchKeyword = null;
                     Long clickCategoryId = null;
                     Long clickProductId = null;
@@ -116,7 +115,7 @@ public class MockData {
             String username = "user" + i;
             String name = "name" + i;
             int age = random.nextInt(60);
-            String professional = "professional" + random.nextInt(100);
+            String professional = "p" + random.nextInt(100);
             String city = "city" + random.nextInt(100);
             String sex = sexes[random.nextInt(2)];
 

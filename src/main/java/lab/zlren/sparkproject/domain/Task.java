@@ -3,7 +3,7 @@ package lab.zlren.sparkproject.domain;
 import java.io.Serializable;
 
 /**
- * 任务
+ * 任务domain
  * <p>
  * Created by zlren on 2017/4/26.
  */

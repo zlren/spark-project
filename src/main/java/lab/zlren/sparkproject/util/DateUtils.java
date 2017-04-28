@@ -1,5 +1,6 @@
 package lab.zlren.sparkproject.util;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -135,5 +136,57 @@ public class DateUtils {
     public static String formatTime(Date date) {
         return TIME_FORMAT.format(date);
     }
+
+    /**
+     * 解析时间字符串
+     *
+     * @param time 时间字符串
+     * @return Date
+     */
+    public static Date parseTime(String time) {
+        try {
+            return TIME_FORMAT.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // /**
+    //  * 格式化日期key
+    //  *
+    //  * @param date
+    //  * @return
+    //  */
+    // public static String formatDateKey(Date date) {
+    //     return DATEKEY_FORMAT.format(date);
+    // }
+    //
+    // /**
+    //  * 格式化日期key
+    //  *
+    //  * @param date
+    //  * @return
+    //  */
+    // public static Date parseDateKey(String datekey) {
+    //     try {
+    //         return DATEKEY_FORMAT.parse(datekey);
+    //     } catch (ParseException e) {
+    //         e.printStackTrace();
+    //     }
+    //     return null;
+    // }
+    //
+    // /**
+    //  * 格式化时间，保留到分钟级别
+    //  * yyyyMMddHHmm
+    //  *
+    //  * @param date
+    //  * @return
+    //  */
+    // public static String formatTimeMinute(Date date) {
+    //     SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
+    //     return sdf.format(date);
+    // }
 
 }
